@@ -31,4 +31,11 @@ class Boat < ActiveRecord::Base
     where(captain_id: nil)
   end
   
+    def self.non_sailboats
+    where("id NOT IN (?)", self.sailboats.pluck(:id))
+  end
+
+   def self.longest
+    order('length DESC').first
+  end
 end
