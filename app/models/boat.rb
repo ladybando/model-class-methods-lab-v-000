@@ -4,6 +4,7 @@ class Boat < ActiveRecord::Base
   has_many    :classifications, through: :boat_classifications
     
   def self.sailboats
+    includes(:classifications).where(classifications: {name: 'Sailboat'})
   end
   
   def self.first_five
