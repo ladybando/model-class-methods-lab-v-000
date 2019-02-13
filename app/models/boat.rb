@@ -3,12 +3,12 @@ class Boat < ActiveRecord::Base
   has_many    :boat_classifications
   has_many    :classifications, through: :boat_classifications
     
-  def sailboats
+  def self.sailboats
   end
   
-  def first_five
+  def self.first_five
   end
   
-  def dinghy
+  def self.dinghy
   end
 end
