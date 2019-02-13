@@ -7,6 +7,7 @@ class Boat < ActiveRecord::Base
   end
   
   def self.first_five
+    all.limit(5)
   end
   
   def self.dinghy
