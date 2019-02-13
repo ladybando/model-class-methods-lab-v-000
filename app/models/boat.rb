@@ -23,4 +23,8 @@ class Boat < ActiveRecord::Base
     where("length >= 20")
   end
   
+  def self.without_a_captain
+    where(captain_id: nil)
+  end
+  
 end
